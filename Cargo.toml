@@ -1,0 +1,13 @@
+[package]
+name = "everything_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+env_logger = "0.11.6"
+log = "0.4.25"
+regex = "1.11.1"
+
+[dev-dependencies]
+ctor = "0.2.9"
+lazy_static = "1.5.0"
