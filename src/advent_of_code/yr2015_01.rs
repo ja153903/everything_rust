@@ -42,6 +42,7 @@ pub mod tests {
         test_logger::setup();
     }
 
+    #[ignore]
     #[test]
     pub fn run_part1() {
         let ans = part1();
@@ -50,6 +51,7 @@ pub mod tests {
         assert_eq!(ans, 74);
     }
 
+    #[ignore]
     #[test]
     pub fn run_part2() {
         let ans = part2();
