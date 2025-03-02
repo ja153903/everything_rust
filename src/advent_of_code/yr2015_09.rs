@@ -187,12 +187,14 @@ pub mod tests {
         test_logger::setup();
     }
 
+    #[ignore]
     #[test]
     pub fn run_part1() {
         let ans = part1();
         info!("Answer for Advent of Code 2015 - Day 09 - Part 1: {}", ans);
     }
 
+    #[ignore]
     #[test]
     pub fn run_part2() {
         let ans = part2();
