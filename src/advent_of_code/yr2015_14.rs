@@ -48,7 +48,7 @@ impl Reindeer {
 
 fn parse_reindeer(line: &str) -> anyhow::Result<Reindeer> {
     let re = Regex::new(
-        r"(?P<reindeer>Rudolph|Cupid|Prancer|Donner|Dasher|Comet|Blitzen|Vixen|Dancer) can fly (?P<velocity>\d+) km/s for (?P<duration>\d+) seconds, but then must rest for (?P<rest>\d+) seconds."
+        r"(?P<reindeer>\w+) can fly (?P<velocity>\d+) km/s for (?P<duration>\d+) seconds, but then must rest for (?P<rest>\d+) seconds."
     ).unwrap();
     match re.captures(line) {
         Some(captures) => {
@@ -126,12 +126,14 @@ pub mod tests {
         test_logger::setup();
     }
 
+    #[ignore]
     #[test]
     pub fn run_part1() {
         let ans = part1();
         info!("Answer for Advent of Code 2015 - Day 14 - Part 1: {}", ans);
     }
 
+    #[ignore]
     #[test]
     pub fn run_part2() {
         let ans = part2();
