@@ -88,9 +88,7 @@ mod nice_string_util {
 }
 
 fn parse_data() -> impl Iterator<Item = &'static str> {
-    include_str!("./data/yr2015_05.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+    include_str!("./data/yr2015_05.in").lines()
 }
 
 pub fn part1() -> usize {

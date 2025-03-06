@@ -65,8 +65,7 @@ fn parse_reindeer(line: &str) -> anyhow::Result<Reindeer> {
 
 fn parse_data() -> Vec<Reindeer> {
     include_str!("./data/yr2015_14.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+        .lines()
         .map(|line| match parse_reindeer(line) {
             Ok(reindeer) => reindeer,
             Err(_) => panic!("Something went wrong trying to parse reindeer"),

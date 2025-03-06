@@ -2,8 +2,7 @@ use itertools::Itertools;
 
 fn parse_data() -> Vec<i64> {
     include_str!("./data/yr2015_17.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+        .lines()
         .map(|line| line.parse::<i64>().unwrap())
         .collect()
 }

@@ -75,8 +75,7 @@ impl FromStr for Instruction {
 
 fn parse_data() -> impl Iterator<Item = Result<Instruction, ParseInstructionError>> {
     include_str!("./data/yr2015_06.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+        .lines()
         .map(Instruction::from_str)
 }
 

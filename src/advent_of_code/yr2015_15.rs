@@ -73,8 +73,7 @@ impl FromStr for Ingredient {
 
 fn parse_data() -> Vec<Result<Ingredient, ParseIngredientError>> {
     include_str!("./data/yr2015_15.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+        .lines()
         .map(Ingredient::from_str)
         .collect()
 }

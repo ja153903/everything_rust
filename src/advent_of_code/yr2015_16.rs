@@ -8,8 +8,7 @@ fn parse_data() -> HashMap<i64, HashMap<Rc<String>, i64>> {
         r"Sue (?P<id>\d+): (?P<compound1>\w+): (?P<compound1_value>\d+), (?P<compound2>\w+): (?P<compound2_value>\d+), (?P<compound3>\w+): (?P<compound3_value>\d+)"
     ).unwrap();
     include_str!("./data/yr2015_16.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+        .lines()
         .for_each(|line| match re.captures(line) {
             None => panic!("Line was not parsed correctly"),
             Some(captures) => {

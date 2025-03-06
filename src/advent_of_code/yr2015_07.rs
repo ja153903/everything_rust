@@ -97,8 +97,7 @@ impl FromStr for Operation {
 
 fn parse_data() -> impl Iterator<Item = Result<Operation, ParseOperationError>> {
     include_str!("./data/yr2015_07.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+        .lines()
         .map(Operation::from_str)
 }
 

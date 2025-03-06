@@ -42,8 +42,7 @@ impl FromStr for UndirectedEdge {
 
 fn parse_data() -> impl Iterator<Item = Result<UndirectedEdge, ParseUndirectedEdgeError>> {
     include_str!("./data/yr2015_09.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+        .lines()
         .map(UndirectedEdge::from_str)
 }
 

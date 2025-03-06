@@ -75,8 +75,7 @@ impl Dimension {
 
 pub fn parse_data() -> impl Iterator<Item = Result<Dimension, ParseDimensionError>> {
     include_str!("./data/yr2015_02.in")
-        .split("\n")
-        .filter(|line| !line.is_empty())
+        .lines()
         .map(Dimension::from_str)
 }
 
