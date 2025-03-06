@@ -70,12 +70,12 @@ pub mod tests {
     #[test]
     pub fn run_part1() {
         let ans = part1();
-        info!("Answer for Advent of Code 2015 - Day 01 - Part 1: {}", ans);
+        info!("Answer for Advent of Code 2015 - Day 17 - Part 1: {}", ans);
     }
 
     #[test]
     pub fn run_part2() {
         let ans = part2();
-        info!("Answer for Advent of Code 2015 - Day 01 - Part 2: {}", ans);
+        info!("Answer for Advent of Code 2015 - Day 17 - Part 2: {}", ans);
     }
 }
