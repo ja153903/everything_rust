@@ -25,3 +25,8 @@ pub mod yr2015_22;
 pub mod yr2016_01;
 pub mod yr2016_02;
 pub mod yr2016_03;
+pub mod yr2016_04;
+pub mod yr2016_05;
+pub mod yr2016_06;
+pub mod yr2016_07;
+pub mod yr2016_08;
