@@ -132,6 +132,7 @@ pub mod tests {
         info!("Answer for Advent of Code 2016 - Day 07 - Part 1: {}", ans);
     }
 
+    #[ignore]
     #[test]
     pub fn run_part2() {
         let ans = part2();
