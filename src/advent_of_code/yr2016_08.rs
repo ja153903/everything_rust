@@ -50,11 +50,11 @@ pub fn part1() -> usize {
             None => panic!("Why is this empty?"),
             Some(instruction) => match instruction {
                 InstructionType::Rect { l, r } => {
-                    for row in 0..*r {
+                    (0..*r).for_each(|row| {
                         for col in 0..*l {
                             screen[row][col] = true;
                         }
-                    }
+                    });
                 }
                 InstructionType::Rotate {
                     x_or_y,
@@ -67,7 +67,7 @@ pub fn part1() -> usize {
                     // If we get x=A, then this means that we're vertically shifting letters by B
                     if x_or_y == "x" {
                         let shifts = delta % 6;
-                        let mut temp_vec = vec![false; 6];
+                        let mut temp_vec = [false; 6];
 
                         for row in 0..6 {
                             temp_vec[(row + shifts) % 6] = screen[row][*value];
@@ -99,11 +99,11 @@ pub fn part2() {
             None => panic!("Why is this empty?"),
             Some(instruction) => match instruction {
                 InstructionType::Rect { l, r } => {
-                    for row in 0..*r {
+                    (0..*r).for_each(|row| {
                         for col in 0..*l {
                             screen[row][col] = true;
                         }
-                    }
+                    });
                 }
                 InstructionType::Rotate {
                     x_or_y,
@@ -116,7 +116,7 @@ pub fn part2() {
                     // If we get x=A, then this means that we're vertically shifting letters by B
                     if x_or_y == "x" {
                         let shifts = delta % 6;
-                        let mut temp_vec = vec![false; 6];
+                        let mut temp_vec = [false; 6];
 
                         for row in 0..6 {
                             temp_vec[(row + shifts) % 6] = screen[row][*value];
@@ -134,7 +134,7 @@ pub fn part2() {
         }
     }
 
-    for row in 0..6 {
+    (0..6).for_each(|row| {
         for col in 0..50 {
             if screen[row][col] {
                 print!("#");
@@ -143,7 +143,7 @@ pub fn part2() {
             }
         }
         println!();
-    }
+    });
 }
 
 #[cfg(test)]
