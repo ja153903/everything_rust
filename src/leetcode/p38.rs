@@ -20,19 +20,19 @@ impl Solution {
             let mut count = 1;
             let mut current = itr.next().unwrap();
 
-            while let Some(ch) = itr.next() {
+            for ch in itr {
                 if current == ch {
                     count += 1;
                 } else {
                     result.push_str(&count.to_string());
-                    result.push_str(&current.to_string());
+                    result.push(current);
                     current = ch;
                     count = 1;
                 }
             }
 
             result.push_str(&count.to_string());
-            result.push_str(&current.to_string());
+            result.push(current);
 
             result
         }

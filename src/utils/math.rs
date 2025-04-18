@@ -15,7 +15,7 @@ pub fn sum_arithmetic_progression(first: i64, last: i64, len: i64) -> i64 {
 
 /// `binet` serves as a closed-form formula for calculating Fibonacci numbers
 pub fn binet(n: i32) -> f64 {
-    let sqrt5 = (5 as f64).sqrt();
+    let sqrt5 = 5_f64.sqrt();
 
     ((1_f64 + sqrt5).powi(n) - (1_f64 - sqrt5).powi(n)) / (2_f64.powi(n) * sqrt5)
 }
