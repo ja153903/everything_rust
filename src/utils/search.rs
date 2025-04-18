@@ -1,4 +1,5 @@
 /// `binary_search` performs a binary search on a sorted array to find the index of a target value
+/// a vector also implements a binary_search method on it
 pub fn binary_search(arr: &[i32], target: i32) -> i32 {
     let mut left: i32 = 0;
     let mut right: i32 = arr.len() as i32 - 1;
@@ -6,11 +7,16 @@ pub fn binary_search(arr: &[i32], target: i32) -> i32 {
     while left <= right {
         let mid = (left + right) / 2;
         if arr[mid as usize] == target {
-            return mid as i32;
-        } else if arr[mid as usize] < target {
-            left = mid + 1;
+            return mid;
         } else {
-            right = mid - 1;
+            match arr[mid as usize] < target {
+                true => {
+                    left = mid + 1;
+                }
+                false => {
+                    right = mid - 1;
+                }
+            }
         }
     }
 
