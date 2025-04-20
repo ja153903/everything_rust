@@ -49,6 +49,38 @@ pub fn efficient_binary_search(arr: &[i32], target: i32) -> i32 {
     }
 }
 
+pub fn lower_bound(arr: &[i32], target: i32) -> i32 {
+    let mut left = 0;
+    let mut right = arr.len();
+
+    while left < right {
+        let mid = left + (right - left) / 2;
+        if arr[mid] < target {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+
+    left as i32
+}
+
+pub fn upper_bound(arr: &[i32], target: i32) -> i32 {
+    let mut left = 0;
+    let mut right = arr.len();
+
+    while left < right {
+        let mid = left + (right - left) / 2;
+        if arr[mid] <= target {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+
+    left as i32
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

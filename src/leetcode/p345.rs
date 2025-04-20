@@ -18,12 +18,12 @@ impl Solution {
 
         let mut i = vowels.len() - 1;
 
-        for j in 0..rev_str.len() {
+        (0..rev_str.len()).for_each(|j| {
             if rev_str[j].is_none() {
                 rev_str[j] = Some(vowels[i]);
                 i -= 1;
             }
-        }
+        });
 
         rev_str.iter().map(|item| item.unwrap()).collect()
     }
